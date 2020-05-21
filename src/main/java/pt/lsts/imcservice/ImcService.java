@@ -65,7 +65,7 @@ public class ImcService {
         NetServer server = Vertx.vertx().createNetServer();
         server.connectHandler(this::clientConnected);
 
-        server.listen(tcpPort, "localhost", res -> {
+        server.listen(tcpPort, res -> {
             if (res.succeeded()) {
                 Logger.getLogger(getClass().getSimpleName()).info("TCP server listening on port "+server.actualPort());
             }
