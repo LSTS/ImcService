@@ -23,3 +23,11 @@ task run(type: JavaExec) {
     args = ["6006", "8009"]
 }
 
+task fatjar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'pt.lsts.imcservice.ImcService'
+    }
+    baseName = 'imcserver'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
