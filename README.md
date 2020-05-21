@@ -1,5 +1,5 @@
 # ImcService
-A Json proxy for DUNE/IMC.
+A Json forwarder for DUNE/IMC.
 
 ## Creating docker image (dune:2020.1.0)
 ```$> ./build_docker.sh```
