@@ -17,9 +17,10 @@ public class DummyObjectConversion {
 
     private static JsonObject asJsonObject(Message msg, boolean toplevel) {
 
-
         JsonObject obj = new JsonObject();
+        JsonArray arr = new JsonArray();
         JsonObject message = new JsonObject();
+        message.add("message", arr);
         if (msg == null)
             return message;
 
@@ -65,7 +66,7 @@ public class DummyObjectConversion {
                 e.printStackTrace();
             }
         }
-        message.add("message", obj);
+        arr.add(obj);
         return message;
     }
 }
