@@ -45,7 +45,7 @@ public class ImcService {
 
     @Consume
     void onMsg(Message m) {
-        String data = m.toString()+"\n";
+        String data = DummyObjectConversion.asJson(m)+"\n";
 
         // update simulated depth
         if (m.mgid() == SimulatedState.ID_STATIC) {
